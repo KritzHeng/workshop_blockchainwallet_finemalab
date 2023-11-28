@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyToken Contract Interface</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.0/web3.min.js"></script>
+</head>
+
+<body>
+  <h1>MyToken Contract Interface</h1>
+
+  <div>
+    <h2>Get Token Information</h2>
+    <button id="btnGetTokenInfo">Get Token Info</button>
+    <p id="tokenInfo"></p>
+  </div>
+
+  <div>
+    <h2>Balance Of</h2>
+    <input type="text" id="balanceOfAddress" placeholder="Enter Address">
+    <button id="btnGetBalance">Get Balance</button>
+    <p id="balanceInfo"></p>
+  </div>
+  <!-- ... existing HTML ... -->
+  <!-- ... existing HTML ... -->
+
+  <div>
+    <h2>Mint Tokens</h2>
+    <input type="text" id="mintToAddress" placeholder="To Address">
+    <input type="number" id="mintAmount" placeholder="Amount">
+    <button id="btnMint">Mint Tokens</button>
+    <p id="mintInfo"></p>
+  </div>
+
+  <!-- ... rest of the existing HTML ... -->
+
+
+  <div>
+    <h2>Transfer Tokens</h2>
+    <input type="text" id="transferToAddress" placeholder="To Address">
+    <input type="number" id="transferAmount" placeholder="Amount">
+    <button id="btnTransfer">Transfer</button>
+    <p id="transferInfo"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
