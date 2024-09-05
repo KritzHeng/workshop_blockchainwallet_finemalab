@@ -1,9 +1,21 @@
-window.addEventListener('load', function () {
+window.addEventListener('load', async function() {
     if (typeof web3 !== 'undefined') {
         web3 = new Web3(web3.currentProvider);
         // Request account access if needed (for modern dApp browsers and MetaMask)
         if (window.ethereum) {
-            window.ethereum.enable().then(function(accounts) {
+                chainId = await web3.eth.getChainId()
+                console.log("Connected to chain " + chainId);
+                if (chainId != '0xaa36a7') { // '0xaa36a7' is the hex chain ID for Sepolia (11155111 in decimal)
+                    alert("Please switch to the Sepolia network.");
+                    window.ethereum.request({
+                        method: 'wallet_switchEthereumChain',
+                        params: [{ chainId: '0xaa36a7' }] // Hexadecimal version of 11155111 (Sepolia)
+                    }).catch(function (error) {
+                        console.error("Error switching network:", error);
+                        alert("Could not switch to Sepolia network. Please switch manually.");
+                    });
+                }
+            window.ethereum.enable().then(function (accounts) {
                 web3.eth.defaultAccount = accounts[0]; // Set the default account
             });
         }
